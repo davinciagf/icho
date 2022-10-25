@@ -1,4 +1,5 @@
 baseURL = 'https://davinciagf.github.com/icho/'
+defaultContentLanguage = 'fr'
 languageCode = 'en-us'
 title = 'ICHO'
 
@@ -18,8 +19,6 @@ startLevel = 1
 # There are different options to translate files
 # See https://gohugo.io/content-management/multilingual/#translation-by-filename
 # And https://gohugo.io/content-management/multilingual/#translation-by-content-directory
-
-defaultContentLanguage = 'fr'
 
 [languages]
 [languages.fr]
