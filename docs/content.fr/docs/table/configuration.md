@@ -38,26 +38,6 @@ Les paragraphes suivants décrivent les différents paramètres :
 | sortby | Paramètre lié au tableau |  |
 | sorttype | Paramètre lié au tableau |  |
 
-    <!--catalogue-results-table
-      fields='{"columnName":"Nom de la donnée","columnIndex":"resourceTitleObject","columnJsonPath":"$.langfre"} |
-      {"columnName":"Nom de la donnée","columnIndex":"overview","columnJsonPath":"$[0].url"} |
-      {"columnName":"Type","columnIndex":"resourceType","columnJsonPath":"$[0]","columnWidth":"1"} |
-      {"columnName":"Nom physique","columnIndex":"mw-gp-localIdentifier","columnJsonPath":"","columnWidth":"4"} |
-      {"columnName":"Statut","columnIndex":"cl_status","columnJsonPath":"$[0].langfre","columnWidth":"1"} |
-      {"columnName":"Note","columnIndex":"supplementalInformationObject","columnJsonPath":"$[0].langfre"} |
-      {"columnName":"Modèle et légende","columnIndex":"related","columnJsonPath":"$.onlines[?(@.function==\"featureCatalogue\")].url.fre","columnIcon":"th"} |
-      {"columnName":"Modèle et légende","columnIndex":"related","columnJsonPath":"$.onlines[?(@.function==\"legend\")].url.fre","columnIcon":"paint brush"} |
-      {"columnName":"Consulter (applications et services)","columnIndex":"mw-gp-thematicMap","columnJsonPath":"$[*].url","columnIcon":"map"} |
-      {"columnName":"Consulter (applications et services)","columnIndex":"mw-gp-allWebServices","columnJsonPath":"$[*].url","columnIcon":"world"} |
-      {"columnName":"Crédits","columnIndex":"resourceCreditObject","columnJsonPath":"$[0].langfre"}'
-      
-filter="+(resourceType:dataset or resourceType:series) -(th_infraSIG.default:Reporting INSPIRE) -(cl_status.key:obsolete) +(custodianOrgForResource:*SPW*)"
-      filterfield="th_Themes_geoportail_wallon_hierarchy.default"
-      size="10"
-      sortby="mw-gp-localIdentifier"
-      sorttype="asc"
-        </catalogue-results-table>
-
 
 ## Configuration du catalogue et de la recherche
 
@@ -177,24 +157,24 @@ Chaque objet json représente une ligne du tableau et est constitué de plusieur
   -	*columnIndex*: nom du champ de l’index pour cette colonne
   -	*columnJsonPath*:  chemin vers la valeur du champs de l’index ((voir https://github.com/dchester/jsonpath)
   -	*columnWidth*: dimension de la colonne (un tableau étant composé de 16 parties maximum, au total la somme des éléments *columnWidth* ne peut excéder 16)
-  -	*columnIcon*: possibilité d'utiliser un ou plusieurs icônes pour représenter une ou des valeurs spécifiques
-     Exemple :
+  -	*columnIcon*: possibilité d'utiliser un ou plusieurs icônes pour représenter une ou des valeurs spécifiques  
+  Exemple :
   ```
   "columnIcon":"map"
   ```
   ```
   "columnIcon":{"series":"th","dataset":"map"}
   ```
-  - *columnIconColor*: possibilité de modifier la couleur d'un icône.
-    Exemple :
+  - *columnIconColor*: possibilité de modifier la couleur d'un icône.  
+  Exemple :
   ```
   "columnIconColor":"green"
   ``` 
   ```
   "columnIconColor":{"series":"green","dataset":"red"}
   ```
-  -	*columnValue*: permet d'afficher une valeur définie sur base de la  valeur de champ retournée par le catalogue
-  Exemple : le catalogue retourne les valeurs 'test1' et 'test2' mais on affiche dans le tableau respectivement la valeur 1 et 2 
+  -	*columnValue*: permet d'afficher une valeur définie sur base de la  valeur de champ retournée par le catalogue.  
+  Exemple : le catalogue retourne les valeurs 'test1' et 'test2' mais on affiche dans le tableau respectivement la valeur 1 et 2  
   ```
   "columnValue":{"test1":"1","test2":"2"}
   ```
@@ -233,7 +213,7 @@ Exemple :
   ```
 
 
-Il est possible d'introduire plusieurs dans une colonne. Pour se faire, il suffit d'utiliser la même valeur pour le paramètre *columnName* et d'appliquer un *columnWidth* identique
+Il est possible d'introduire plusieurs valeurs dans une colonne. Pour ce faire, il suffit d'utiliser la même valeur pour le paramètre *columnName* et d'appliquer un *columnWidth* identique.
 
 {{< hint danger >}}
 **Il est nécessaire de référencer les liens vers le code javascript et le code de style des composants web ICHO**  
