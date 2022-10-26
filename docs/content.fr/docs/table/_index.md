@@ -1,9 +1,4 @@
 ---
-weight: 20
 bookFlatSection: true
-title: "Table"
+title: "Tableau de métadonnées"
 ---
-
-# Introduction
-
-## Table

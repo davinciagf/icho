@@ -3,43 +3,42 @@ title: Introduction
 type: docs
 ---
 
-# Les composants web pour GeoNetwork
+# Les composants web pour les catalogues de métadonnées GeoNetwork
 
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
+Ces composants web ont été mis en place afin de répondre à divers besoins:
+-	Présentation de certaines informations contenues dans le catalogue [GeoNetwork](https://geonetwork-opensource.org/) sous forme de tableau
+-	Récupération des données depuis l’index [ElasticSearch](https://www.elastic.co) du catalogue [GeoNetwork](https://geonetwork-opensource.org/)
+-	Conception dynamique de tableaux sur base de champs sélectionnées dans l’index [ElasticSearch](https://www.elastic.co) de [GeoNetwork](https://geonetwork-opensource.org/)
+-	Possibilité de recherche, tri et filtre (interaction directe avec [ElasticSearch](https://www.elastic.co))
+-	Intégration dans des sites internet externes
+
+Ces composants web ont été créés dans le cadre du projet [METAWAL](https://metawal.wallonie.be/) pour une intégration dans différents sites de la [Région wallonne](https://www.wallonie.be/fr).
 
 {{< columns >}}
-## Card
+## Cartes de métadonnées
 
-Est in vagis et Pittheus tu arge accipiter regia iram vocatur nurus. Omnes ut
-olivae sensit **arma sorori** deducit, inesset **crudus**, ego vetuere aliis,
-modo arsit? Utinam rapta fiducia valuere litora _adicit cursu_, ad facies
-
+Ce composant permet d'afficher les résultats d'une recherche GeoNetwork sous forme d'une liste de cartes de métadonnées. La structure s'inspire de celles des stores tels que les web applications store.
+![mapStore_exemple.png](./docs/card/images/mapStore_exemple.png)
 <--->
 
-## Table
+## Tableau de métadonnées
 
-Ea _furtique_ risere fratres edidit terrae magis. Colla tam mihi tenebat:
-miseram excita suadent es pecudes iam. Concilio _quam_ velatus posset ait quod
-nunc! Fragosis suae dextra geruntur functus vulgata.
+Ce composant délivre le résultat d'une recherche GeoNetwork sous forme d'un tableau que l'utilisateur peut customisé selon divers afin d'améliorer l'expérience utilisateur (utilisation d'icônes, définition de label, jeu de couleur,...)
+![table_exemple.png](./docs/table/images/table_exemple.png)
 {{< /columns >}}
 
+# GeoNetwork - limitation de version
+Ces composants sont disponibles pour les versions [4.2.0 de GeoNetwork](https://geonetwork-opensource.org/manuals/4.0.x/en/overview/change-log/version-4.2.0.html) et supérieure (utilisation du composant ElasticSearch de GeoNetwork)
 
-## Tempora nisi nunc
+# Equipe de développements
 
-Lorem **markdownum** emicat gestu. Cannis sol pressit ducta. **Est** Idaei,
-tremens ausim se tutaeque, illi ulnis hausit, sed, lumina cutem. Quae avis
-sequens!
+- Arnaud De Groof
+- François Prunayre
+- Vincent Bombaerts
+- Marceau Louis
 
-    var panel = ram_design;
-    if (backup + system) {
-        file.readPoint = network_native;
-        sidebar_engine_device(cell_tftp_raster,
-                dual_login_paper.adf_vci.application_reader_design(
-                graphicsNvramCdma, lpi_footer_snmp, integer_model));
-    }
+Voir [Github](https://github.com/titellus/icho)
 
-## Locis suis novi cum suoque decidit eadem
+# Financement
 
-Idmoniae ripis, at aves, ali missa adest, ut _et autem_, et ab?
+Le financement a été assuré par la Région wallonne dans le cadre de la maintenance de son catalogue de métadonnées [METAWAL](https://metawal.wallonie.be/)

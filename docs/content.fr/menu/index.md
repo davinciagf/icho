@@ -3,18 +3,12 @@ headless: true
 ---
 
 - [**Card**]({{< relref "/card" >}})
-  - [With ToC]({{< relref "/card/cardElements/" >}})
+  - [Introduction]({{< relref "/card/introduction" >}})
+  - [Configuration]({{< relref "/card/configuration" >}})
+  - [Integration]({{< relref "/card/integration" >}})
 - [**Table**]({{< relref "/table" >}})
-  - [With ToC]({{< relref "/table/tableElements/" >}})
-- [**Integration**]({{< relref "/integration" >}})
+  - [Introduction]({{< relref "/table/introduction" >}})
+  - [Configuration]({{< relref "/table/configuration" >}})
+  - [Integration]({{< relref "/table/integration" >}})
 <br />
 
-- **Shortcodes**
-- [Buttons]({{< relref "/docs/shortcodes/buttons" >}})
-- [Columns]({{< relref "/docs/shortcodes/columns" >}})
-- [Expand]({{< relref "/docs/shortcodes/expand" >}})
-- [Hints]({{< relref "/docs/shortcodes/hints" >}})
-- [KaTex]({{< relref "/docs/shortcodes/katex" >}})
-- [Mermaid]({{< relref "/docs/shortcodes/mermaid" >}})
-- [Tabs]({{< relref "/docs/shortcodes/tabs" >}})
-<br />

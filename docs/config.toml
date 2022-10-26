@@ -34,7 +34,7 @@ startLevel = 1
 [menu]
 # [[menu.before]]
 [[menu.after]]
-  name = "Icho Github"
+  name = "ICHO Github"
   url = "https://github.com/titellus/icho"
   weight = 10
 
