@@ -157,7 +157,7 @@ Chaque objet json représente une ligne du tableau et est constitué de plusieur
   -	*columnIndex*: nom du champ de l’index pour cette colonne
   -	*columnJsonPath*:  chemin vers la valeur du champs de l’index ((voir https://github.com/dchester/jsonpath)
   -	*columnWidth*: dimension de la colonne (un tableau étant composé de 16 parties maximum, au total la somme des éléments *columnWidth* ne peut excéder 16)
-  -	*columnIcon*: possibilité d'utiliser un ou plusieurs icônes pour représenter une ou des valeurs spécifiques  
+  -	*columnIcon*: possibilité d'utiliser un ou plusieurs icônes pour représenter une ou des valeurs spécifiques. Liste des [icônes disponibles](https://react.semantic-ui.com/elements/icon/)  
   Exemple :
   ```
   "columnIcon":"map"
