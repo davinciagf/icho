@@ -1,33 +1,35 @@
 ---
 weight: 20
 bookFlatSection: true
-title: "Configuration d'une tableau"
+title: "Configuration d'un tableau de métadonnées"
 ---
 
 # Le composant web "tableau de métadonnées"
 
-Une balise html de type `<catalogue-results-table [parameters]></catalogue-results-table>` est utilisé dans
+Une balise html de type `<catalogue-results-table [parameters]></catalogue-results-table>` est utilisée dans
 le code html afin d'introduire le composant web.
-Plusieurs paramètres sont à introduire au nivea ude la balise afin de compléter la configuration du composant.
+Plusieurs paramètres sont à introduire au niveau de cette balise afin de compléter la configuration du composant web.
 
-Attention, il est nécessaire d'introduire des références vers le code Javascript et les feuilles de
-style d'ICHO afin d'afficher le résultats d'une recherche via ce composant web.
+Attention, il est nécessaire d'introduire des références vers le code JavaScript et les feuilles de
+style en cascade d'ICHO afin d'afficher les résultats d'une recherche via ce composant web.
 
 
 # Configuration du composant web "tableau de métadonnées"
 
-Le schema ci-dessous illustre les éléments composants le composant.
+Le schema ci-dessous illustre les éléments définisant le composant.
 
 ![table_schema.png](../images/table_schema.png)
 
 Plusieurs paramètres sont utilisés pour définir cette affichage du tableau de métadonnées.
-Les paragraphes suivants décrivent les différents paramètres :
+Les paragraphes suivants décrivent ces différents paramètres :
 
 
 | Idenfiant  | Zone                                | Obligatoire |
 |------------|-------------------------------------|--|
 | catalogueurl | Paramètre global                    | x |
-| filter | Paramètre de recherche |  |
+| filter | Paramètre global |  |
+| sortby | Paramètre global |  |
+| sorttype | Paramètre global |  |
 | filterfield | Paramètre de la zone de recherche |  |
 | togglefilterfield | Paramètre de la zone de recherche |  |
 | toggleismultiselect | Paramètre de la zone de recherche |  |
@@ -35,13 +37,12 @@ Les paragraphes suivants décrivent les différents paramètres :
 | toggleButtonStyle | Paramètre de la zone de recherche |  |
 | fields | Paramètre lié au tableau |  |
 | size | Paramètre lié au tableau |  |
-| sortby | Paramètre lié au tableau |  |
-| sorttype | Paramètre lié au tableau |  |
+
 
 
 ## Configuration du catalogue et de la recherche
 
--	***catalogueurl*** (obligatoire): adresse du catalogue à interroger
+-	***catalogueurl*** (obligatoire): adresse du catalogue source à interroger
 
 Exemple :
 
@@ -52,7 +53,7 @@ Exemple :
     ...>
   </catalogue-results-table>
   ```
--	***filter***: nom d’un champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene
+-	***filter***: nom d’un champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene afin d'affiner le filtre
 
 Exemple :
 
@@ -95,25 +96,25 @@ opérées par l'utilisateur.
 
 ## Zone "Search"
 
--	***fulltextfilter*** : champs qui sont utilisés pour la recherche fulltext
+-	***fulltextfilter*** : champ qui est utilisé pour une recherche de type 'fulltext'
    
   Exemple :
 
   ```
   ```
--	***search_placeholder*** : Nom de la zone de recherche
+-	***search_placeholder*** : texte utilisé au niveau de la zone de recherche
 
 Exemple :
 
 ```
 ```
 ## Zone "Field X"
--	***togglefilterfield*** : champ qui sert de filtre
--	***toggleismultiselect*** : possibilité que l'utilisateur réalise une sélection multiple (valeur autorisée : 'true' ou 'false')
--	***togglelabel*** : possibilité de configuration des boutons reprenant les valeurs du champ servant de filtre :
-  - *label*: label du button
+-	***togglefilterfield*** : champ de l'index qui sert de filtre
+-	***toggleismultiselect*** : permet d'activer ou non une sélection multiple (valeur autorisée : 'true' ou 'false')
+-	***togglelabel*** : possibilité de configuration les boutons reprenant les valeurs du champ de l'index servant de filtre :
+  - *label*: label du button utilisé
   - *value*: valeur du champ de l’index
-- ***toggleButtonStyle***: nom du champ de l’index pour la zone “image”
+- ***toggleButtonStyle***: possibilité de customisé le style des boutons
   - *bg*: couleur de fond du bouton
   - *bg_active*: couleur de fond du bouton après sélection
   - *text_color*: couleur du texte
@@ -132,8 +133,8 @@ Exemple :
   </catalogue-results-table>
   ```
 ## Zone "Focus on"
--	***filterfield*** : champ qui sert de filtre pour le filtre
--	***filterfield_placeholder*** : Nom de la zone de filtre
+-	***filterfield*** : champ de l'index qui sert de filtre pour ce type filtre
+-	***filterfield_placeholder*** : texte utilisé pour la zone de filtre
 
 Exemple : 
 
@@ -151,12 +152,12 @@ Exemple :
 
 Les paramètres de cette zone sont:
 
-- ***fields***: regroupe sous forme d'objets json séparé les uns des autres des '|' les paramètres des champs de l’index à intégrer dans le tableau. 
-Chaque objet json représente une ligne du tableau et est constitué de plusieurs paramètres :
+- ***fields***: regroupe sous forme d'objets json séparé les uns des autres par des '|', les paramètres des champs de l’index à intégrer dans le tableau. 
+Chaque objet json représente une ligne du tableau et est constitué de plusieurs sous-paramètres :
   - *columnName*: nom de la colonne
   -	*columnIndex*: nom du champ de l’index pour cette colonne
-  -	*columnJsonPath*:  chemin vers la valeur du champs de l’index ((voir https://github.com/dchester/jsonpath)
-  -	*columnWidth*: dimension de la colonne (un tableau étant composé de 16 parties maximum, au total la somme des éléments *columnWidth* ne peut excéder 16)
+  -	*columnJsonPath*:  chemin vers la valeur du champ de l’index ((voir https://github.com/dchester/jsonpath)
+  -	*columnWidth*: dimension de la colonne (un tableau est de 16 parties maximum, au total la somme des éléments *columnWidth* ne peut excéder 16)
   -	*columnIcon*: possibilité d'utiliser un ou plusieurs icônes pour représenter une ou des valeurs spécifiques. Liste des [icônes disponibles](https://react.semantic-ui.com/elements/icon/)  
   Exemple :
   ```
@@ -165,7 +166,7 @@ Chaque objet json représente une ligne du tableau et est constitué de plusieur
   ```
   "columnIcon":{"series":"th","dataset":"map"}
   ```
-  - *columnIconColor*: possibilité de modifier la couleur d'un icône.  
+  - *columnIconColor*: possibilité de modifier la couleur d'un icône ou des icônes utilisés.  
   Exemple :
   ```
   "columnIconColor":"green"
@@ -173,13 +174,13 @@ Chaque objet json représente une ligne du tableau et est constitué de plusieur
   ```
   "columnIconColor":{"series":"green","dataset":"red"}
   ```
-  -	*columnValue*: permet d'afficher une valeur définie sur base de la  valeur de champ retournée par le catalogue.  
+  -	*columnValue*: permet d'afficher une valeur définie sur base de la valeur de champ de l'index retournée par le catalogue.  
   Exemple : le catalogue retourne les valeurs 'test1' et 'test2' mais on affiche dans le tableau respectivement la valeur 1 et 2  
   ```
   "columnValue":{"test1":"1","test2":"2"}
   ```
-  -	*columnLabel*: permet d'intégrer la valeur retournée par le catalogue via un label. Il est possible de varier les couleurs selon les valeurs du champ. 
-  Pour définir la couleur, il est possible d'utiliser le code hexadecimal de la couleur du bouton ou nom de la couleur disponible sur base du nom défini ci-dessous :
+  -	*columnLabel*: permet d'intégrer la valeur de l'index retournée par le catalogue via un label. Il est possible de varier les couleurs selon les valeurs du champ de l'index. 
+  Pour définir la couleur, il est possible d'utiliser le code hexadecimal de la couleur du bouton ou le nom de la couleur. L'utilisation du nom de la couleur est limitée au nom défini ci-dessous :
   ![colorName.png](../images/colorName.png)
   Exemple :
   ```
@@ -188,8 +189,8 @@ Chaque objet json représente une ligne du tableau et est constitué de plusieur
   ```
   "columnLabel":"red"
   ```
-  -	*columnFormatter*: si la valeur 'withouttext' est indiquée, aucune valeur 'texte' n'est pas affichée pour cette cellule du tableau (cas d'utilisation : affichage d'un simple icône)
-- ***size*** : nombre de lignes à afficher dans le tableau par page
+  -	*columnFormatter*: si la valeur 'withouttext' est indiquée, aucune valeur 'texte' n'est pas affichée pour cette cellule du tableau (cas d'utilisation : affichage d'un ou plusieurs icônes pour représenter une valeur ou plusieurs valeurs)
+- ***size*** : nombre de lignes à afficher dans le tableau (ceci modifie la pagination)
 
 Exemple :
 
@@ -213,11 +214,11 @@ Exemple :
   ```
 
 
-Il est possible d'introduire plusieurs valeurs dans une colonne. Pour ce faire, il suffit d'utiliser la même valeur pour le paramètre *columnName* et d'appliquer un *columnWidth* identique.
+Il est possible d'introduire plusieurs valeurs issus de différents champs de l'index au sein des cellules. Pour ce faire, il suffit d'utiliser la même valeur pour le paramètre *columnName* et d'appliquer un *columnWidth* identique. 
 
 {{< hint danger >}}
-**Il est nécessaire de référencer les liens vers le code javascript et le code de style des composants web ICHO**  
-En plus de cette balise, il est nécessaire de référencer lors de l’intégration les fichiers javascript et css nécessaires à l'intégration du tableau de métadonnées.
+**Il est nécessaire de référencer les liens vers le code JavaScript et le code de style en cascade des composants web ICHO**  
+En plus de cette balise, il est nécessaire de référencer lors de l’intégration les fichiers JavaScript et CSS nécessaires à l'intégration du tableau de métadonnées.
 {{< /hint >}}
 
 {{< button relref="./integration">}}Intégration{{< /button >}}
