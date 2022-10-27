@@ -4,7 +4,7 @@ bookFlatSection: true
 title: "Introduction aux cartes"
 ---
 
-# Vue globale
+# Vue  globale - carte
 La structure de présentation des métadonnées est réalisée sous forme de liste de carte de produits (cf. web applications store).
 
 On identifie deux parties pour ce composant web:
