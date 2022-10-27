@@ -53,7 +53,7 @@ Exemple :
     ...>
   </catalogue-results-table>
   ```
--	***filter***: champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene afin d'affiner le filtre
+-	***filter***: nom du champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene afin d'affiner le filtre
 
 Exemple :
 
@@ -65,7 +65,7 @@ Exemple :
   </catalogue-results-table>
   ```
 
--	***sortby***: champ de l’index qui sert d'élément de tri pour la recherche
+-	***sortby***: nom du champ de l’index qui sert d'élément de tri pour la recherche
 
 Exemple :
 
@@ -96,7 +96,7 @@ opérées par l'utilisateur.
 
 ## Zone "Search"
 
--	***fulltextfilter*** : champ de l'index qui est utilisé pour une recherche de type 'fulltext'
+-	***fulltextfilter*** : nom du champ de l'index qui est utilisé pour une recherche de type 'fulltext'
    
   Exemple :
 
@@ -109,7 +109,7 @@ Exemple :
 ```
 ```
 ## Zone "Field X"
--	***togglefilterfield*** : champ de l'index qui sert de filtre
+-	***togglefilterfield*** : nom du champ de l'index qui sert de filtre
 -	***toggleismultiselect*** : permet d'activer ou non une sélection multiple (valeur autorisée : 'true' ou 'false')
 -	***togglelabel*** : possibilité de configuration les boutons reprenant les valeurs du champ de l'index servant de filtre :
   - *label*: label du button utilisé
@@ -133,7 +133,7 @@ Exemple :
   </catalogue-results-table>
   ```
 ## Zone "Focus on"
--	***filterfield*** : champ de l'index qui sert de filtre pour ce type filtre
+-	***filterfield*** : nom du champ de l'index qui sert de filtre pour ce type filtre
 -	***filterfield_placeholder*** : texte utilisé pour la zone de filtre
 
 Exemple : 
@@ -180,7 +180,7 @@ Chaque objet json représente une ligne du tableau et est constitué de plusieur
   "columnValue":{"test1":"1","test2":"2"}
   ```
   -	*columnLabel*: permet d'intégrer la valeur de l'index retournée par le catalogue via un label. Il est possible de varier les couleurs selon les valeurs du champ de l'index. 
-  Pour définir la couleur, il est possible d'utiliser le code hexadecimal de la couleur du bouton ou le nom de la couleur. L'utilisation du nom de la couleur est limitée au nom défini ci-dessous :
+  Pour définir la couleur, il est possible d'utiliser le code hexadecimal de la couleur du bouton ou le nom de la couleur. L'utilisation du nom de la couleur est limitée aux noms définis ci-dessous :
   ![colorName.png](../images/colorName.png)
   Exemple :
   ```
