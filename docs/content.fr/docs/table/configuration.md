@@ -53,7 +53,7 @@ Exemple :
     ...>
   </catalogue-results-table>
   ```
--	***filter***: nom d’un champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene afin d'affiner le filtre
+-	***filter***: champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene afin d'affiner le filtre
 
 Exemple :
 
@@ -65,7 +65,7 @@ Exemple :
   </catalogue-results-table>
   ```
 
--	***sortby***: nom d’un champ de l’index qui sert d'élément de tri pour la recherche
+-	***sortby***: champ de l’index qui sert d'élément de tri pour la recherche
 
 Exemple :
 
@@ -96,13 +96,13 @@ opérées par l'utilisateur.
 
 ## Zone "Search"
 
--	***fulltextfilter*** : champ qui est utilisé pour une recherche de type 'fulltext'
+-	***fulltextfilter*** : champ de l'index qui est utilisé pour une recherche de type 'fulltext'
    
   Exemple :
 
   ```
   ```
--	***search_placeholder*** : texte utilisé au niveau de la zone de recherche
+-	***search_placeholder*** : texte affiché au niveau de la zone de recherche
 
 Exemple :
 
