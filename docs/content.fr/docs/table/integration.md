@@ -5,30 +5,30 @@ title: "Intégration d'un tableau"
 ---
 
 # Intégration
-On peut distingue deux blocs à intégrer dans un site tier :
-- lien vers les fichiers javascript et css d'ICHO
-- web composant avec l'ensemble de ces paramètres
+On distingue deux blocs de code à intégrer dans un site tier (page html) :
+- liens vers les fichiers JavaScript et css d'ICHO
+- composant web avec l'ensemble de ces paramètres
 
-## Référencement des liens des références javascript et CSS
+## Référencement des liens JavaScript et CSS
 
-Deux fichiers *.css doivent être référencés dans le code html.
+Deux fichiers CSS doivent être référencés dans le code html.
 
 ```
 <link href="https://metawal.wallonie.be/geonetwork/catalog/lib/icho/styles.css" rel="stylesheet" />
 <link href="https://metawal.wallonie.be/geonetwork/catalog/lib/icho/main.css" rel="stylesheet" />
 ```
-Trois fichiers *.js sont à référencer dans le code html.
+Trois fichiers JavaScript sont à référencer dans le code html.
 
 ```
 <script src="https://metawal.wallonie.be/geonetwork/catalog/lib/icho/runtime.esm.js"  type="module">
 </script><script src="https://metawal.wallonie.be/geonetwork/catalog/lib/icho/polyfills.esm.js" type="module">
 </script><script src="https://metawal.wallonie.be/geonetwork/catalog/lib/icho/main.esm.js" type="module"></script>
 ```
-Les adresses sont à modifier selon l'endoir de mise à disposition des scripts ICHO.
-Dans l'exemple ci-dessous, ces cinq fichiers ont été intégrés au niveau du catalogue GeoNetwork au niveau de  afin d'être présent suite au 'build' du catalogue et à son déploiement sur un server.
+Les adresses sont à modifier selon l'adresse de mise à disposition des scripts ICHO.
+Dans l'exemple ci-dessous, ces cinq fichiers ont été intégrés lors du 'build' du catalogue GeoNetwork (au niveau de https://github.com/SPW-DIG/metawal-core-geonetwork/tree/metawal-4.2.1/web-ui/src/main/resources/catalog/lib/icho) afin d'être disponibles depuis l'adresse du catalogue source.
 
 {{< hint info >}}
-**Référencer des liens vers le code javascript et le code de style des composants web ICHO**  
+**Référencement des liens vers le code JavaScript et le code de style en cascade des composants web ICHO**  
 Cette procédure de référencement des liens JavaScript et CSS est identique pour l'ensemble des composants web ICHO
 {{< /hint >}}
 
