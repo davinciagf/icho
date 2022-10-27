@@ -4,19 +4,24 @@ bookFlatSection: true
 title: "Configuration des cartes"
 ---
 
+
 # Le composant web "cartes de métadonnées"
 
-Une balise html de type `<catalogue-results-card [parameters]></catalogue-results-card>` est utilisé dans 
+Une balise html de type `<catalogue-results-card [parameters]></catalogue-results-card>` est utilisée dans
 le code html afin d'introduire le composant web.
-Plusieurs paramètres sont à introduire au nivea ude la balise afin de compléter la configuration du composant.
+Plusieurs paramètres sont à introduire au niveau de cette balise afin de compléter la configuration du composant web.
 
-Attention, il est nécessaire d'introduire des références vers le code Javascript et les feuilles de 
-style d'ICHO afin d'afficher le résultats d'une recherche via ce composant web.
+Attention, il est nécessaire d'introduire des références vers le code JavaScript et les feuilles de
+style en cascade d'ICHO afin d'afficher les résultats d'une recherche via ce composant web.
 
 
 # Configuration du composant web "cartes de métadonnées"
 
-Plusieurs paramètres sont utilisés pour définir l'affichage des cartes de métadonnées. 
+Le schema ci-dessous illustre les éléments définisant le composant.
+
+![table_schema.png](../images/card_schema.png)
+
+Plusieurs paramètres sont utilisés pour définir cette affichage du tableau de métadonnées.
 Les paragraphes suivants décrivent ces différents paramètres :
 
 
@@ -54,7 +59,7 @@ Exemple :
     ...>
   </catalogue-results-card>
   ```
--	***filter***: nom d’un champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene
+-	***filter***: nom du champ de l’index qui servira de filtre pour la recherche ou requête de type Lucene afin d’affiner le filtre
 
 Exemple :
 
@@ -66,7 +71,7 @@ Exemple :
   </catalogue-results-card>
   ```
 
--	***sortby***: nom d’un champ de l’index qui d'élément de tri pour la recherche 
+-	***sortby***: nom du champ de l’index qui sert d’élément de tri pour la recherche
 
 Exemple :
 
@@ -86,8 +91,8 @@ opérées par l'utilisateur.
 ![mapSotre_searchArea_schema.png](../images/mapSotre_searchArea_schema.png)
 
 ### Zone "Search"
--	***fulltextfilter*** : champ qui sont utilisés pour la recherche fulltext
--	***search_placeholder*** : Nom à afficher au niveau de la zone de recherche
+-	***fulltextfilter*** : nom du champ de l'index qui sont utilisés pour la recherche de type 'fulltext'
+-	***search_placeholder*** : texte affiché au niveau de la zone de recherche
 
 Exemple :
 
@@ -101,8 +106,8 @@ Exemple :
   ```
 
 ### Zone "Filterfield"
--	***filterfield*** : champ qui peut-être utiliser par l'utilisateur pour filter pour les résultats
--	***filterfield_placeholder*** : Nom à afficher au niveau de la zone de ce filtre
+-	***filterfield*** : nom du champ de l'index qui peut-être utilisé par l'utilisateur pour filtrer les résultats
+-	***filterfield_placeholder*** : texte affiché au niveau de la zone de ce filtre
 
 Exemple :
 
@@ -116,8 +121,8 @@ Exemple :
   ```
 
 ### Zone "Filterfield_2"
--	***filterfield_2*** : champ qui peut-être utiliser par l'utilisateur pour filter pour les résultats
--	***filterfield_2_placeholder*** : Nom à afficher au niveau de la zone de ce filtre
+-	***filterfield_2*** : nom du champ de l'index qui peut-être utiliser par l'utilisateur pour filter pour les résultats
+-	***filterfield_2_placeholder*** : texte affiché au niveau de la zone de ce filtre
 
 Exemple :
 
@@ -131,9 +136,9 @@ Exemple :
   ```
 
 ### Zone "Sort"
-- ***sortbylist*** : définition du tri pour les résultats de la recherche, composé de couples de valeurs
-  - *sortIndexRef* : champ sur lequel est effectué le tri
-  -	*sortName* : Nom affiché du critère de tri
+- ***sortbylist*** : définition du tri pour les résultats de la recherche, composé d'objets json séparés par des '|' et présentant des couples de valeurs
+  - *sortIndexRef* : nom du champ de l'index sur lequel est effectué le tri
+  -	*sortName* : texte affiché au niveau de la zone de tri
 - ***sorttype*** : définition du type de tri. Valeur autorisée : “asc” ou “desc”
 
 Exemple :
@@ -160,25 +165,24 @@ On distingue deux groupes de paramètres :
 ### Paramètres liés aux informations fournies par la carte de métadonnées
 Les paramètres de cette zone sont:
 
-- ***fields***:  ce paramètre regroupe sous forme d’un object json les paramètres des champs de l’index à intégrer 
-dans la carte sur base des zones définies (Title, SubTitle, Text,...). 
+- ***fields***:  ce paramètre regroupe sous forme d’un object json les informations relatives aux champs des index à intégrer 
+dans la carte au niveau des zones pré-définies (Title, SubTitle, Text,...). 
 Plusieurs paramètres sont utilisés :
   - *imageIndex*: nom du champ de l’index pour la zone “Image”
-  -	*imageJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath) est nécessaire
+  -	*imageJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath)
   -	*titleIndex*: nom du champ de l’index pour la zone “Title”
-  -	*titleJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath) est nécessaire
+  -	*titleJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath)
   -	*titleSize*: taille de caractère de la zone title (h1,h2,h3,h4)
   -	*subTitleIndex*: nom du champ de l’index pour la zone “SubTitle”
-  -	*subTitleJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath) est nécessaire
+  -	*subTitleJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath)
   -	*textIndex*: nom du champ de l’index pour la zone “Text”
-  -	*textJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath) est nécessaire
+  -	*textJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath)
   -	*linkIndex*: nom du champ de l’index pour la zone “Link”
-  -	*linkJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath) est nécessaire
-  -	*linkIcon*: identifiant de l’icône (voir: bibliothèque des [icones](https://react.semantic-ui.com/elements/icon/) de la librairie [semantic-ui pour React](https://react.semantic-ui.com)
-  -	*linkButtonColor* : code hexadecimal de la couleur du bouton ou nom de la couleur  
-  couleur disponible sur base du nom 
+  -	*linkJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath)
+  -	*linkIcon*: identifiant de l’icône (voir: bibliothèque des [icones](https://react.semantic-ui.com/elements/icon/) issus de la librairie [semantic-ui pour React](https://react.semantic-ui.com)
+  -	*linkButtonColor* : code hexadecimal de la couleur du bouton ou nom de la couleur. L'utilisation du nom de la couleur est limitée aux noms définis ci-dessous :  
   ![colorName.png](../images/colorName.png)
-  -	*linkHook*: Texte du bouton 
+  -	*linkHook*: texte affiché pour le bouton de lien
   -	*additionalinfoIndex*: nom du champ de l’index pour la zone “Info”
   -	*additionalinfoJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath) est nécessaire
 - ***linkmdt*** (true/false): affichage ou non du lien Link vers la fiche complète
@@ -199,12 +203,12 @@ Exemple :
 
 
 ### Paramètres liés à l'ogranisation des cartes
-- ***size*** : nombre d’éléments par page (pagination)
-- ***itemsperrow***: nombre de carte par ligne 
-- ***marginx*** : écart entre les cards
-- ***margintoolsbottom*** : espace entre la ligne des filtres et les cards 
-- ***marginbottom*** : espace entre les cards et la ligne de pagination
-- ***margincardbottom*** : définit l’espace sous une card
+- ***size*** : nombre de cartes par page (pagination)
+- ***itemsperrow***: nombre de cartes par ligne 
+- ***marginx*** : écart entre les cartes
+- ***margintoolsbottom*** : espace entre la zone de recherche et la zone de présentation des cartes 
+- ***marginbottom*** : espace entre les cartes et la pagination
+- ***margincardbottom*** : espace sous une carte
 
 Exemple :
 
@@ -221,8 +225,8 @@ Exemple :
   </catalogue-results-card>
   ```
 {{< hint danger >}}
-**Il est nécessaire de référencer les liens vers le code javascript et le code de style des composants web ICHO**  
-En plus de cette balise, il est nécessaire de référencer lors de l’intégration les fichiers javascript et css nécessaires à l'intégration des cartes de métadonnées.
+**Il est nécessaire de référencer les liens vers le code JavaScript et le code de style en cascade des composants web ICHO**  
+En plus de cette balise, il est nécessaire de référencer lors de l’intégration les fichiers JavaScript et CSS nécessaires à l'intégration du tableau de métadonnées.
 {{< /hint >}}
 
 {{< button relref="./integration">}}Intégration{{< /button >}}
