@@ -5,7 +5,7 @@ title: "Introduction aux tableaux"
 ---
 
 # Vue globale
-La structure de présentation des métadonnées est réalisée sour forme d'un tableau que l'on peut paramétrer afin de faire apparaître l'un ou l'autre champ. De plus, on peut enrichier l'expérience utilisateur en customisant le rendu visuel via des couleurs, des labels et des icônes.
+La structure de présentation des métadonnées est réalisée sous forme d'un tableau que l'on peut paramétrer afin de faire apparaître l'un ou l'autre champ. De plus, on peut enrichier l'expérience utilisateur en customisant le rendu visuel via des couleurs, des labels et des icônes.
 
 On identifie deux parties pour ce composant web:
 - la zone de recherche
