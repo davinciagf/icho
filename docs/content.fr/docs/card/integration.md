@@ -25,7 +25,7 @@ Trois fichiers JavaScript sont à référencer dans le code html.
 </script><script src="https://metawal.wallonie.be/geonetwork/catalog/lib/icho/main.esm.js" type="module"></script>
 ```
 Les adresses sont à modifier selon l'adresse de mise à disposition des scripts ICHO.
-Dans l'exemple ci-dessous, ces cinq fichiers ont été intégrés lors du 'build' du catalogue GeoNetwork (au niveau de https://github.com/SPW-DIG/metawal-core-geonetwork/tree/metawal-4.2.1/web-ui/src/main/resources/catalog/lib/icho) afin d'être disponibles depuis l'adresse du catalogue source.
+Dans l'exemple ci-dessous, ces cinq fichiers ont été intégrés lors du 'build' du catalogue GeoNetwork (au niveau de '/web-ui/src/main/resources/catalog/lib/icho') afin d'être disponibles depuis l'adresse du catalogue source.
 
 {{< hint info >}}
 **Référencement des liens vers le code JavaScript et le code de style en cascade des composants web ICHO**  
