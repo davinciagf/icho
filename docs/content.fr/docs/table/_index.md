@@ -1,4 +1,4 @@
 ---
 bookFlatSection: true
-title: "Tableau de métadonnées"
+title: "Tableaux de métadonnées"
 ---
