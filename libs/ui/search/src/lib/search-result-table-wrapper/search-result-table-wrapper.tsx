@@ -154,13 +154,12 @@ export function SearchResultTableWrapper({
               customQuery={
                 function(value, props) {
                   if (value[0]) {
-
+                    let value_escapeReservedCharacters = value.replace(
+                      /(\+|-|&&|\|\||!|\{|\}|\[|\]|\^|\~|\?|:|\\{1}|\(|\)|\/)/g,
+                      "\\$1"
+                    );
                     let analyser:{[index: string]:any} = {}
-                    // to limit query to specific fields: add dataField props, and analyser["query"] to select the search value, analyser["fields"]=props.dataField to specify the datafiels params and
-                    //let test = value
-                    //analyser["query"]= test
-                    //analyser["fields"]=props.dataField
-                    analyser["query"]='(any.\\*:('+value+') OR any.common:('+value+') OR resourceTitleObject.\\*:('+value+')^2 OR resourceTitleObject.\\*:\"'+value+'\"^6)'
+                    analyser["query"]='(any.\\*:('+value_escapeReservedCharacters+') OR any.common:('+value_escapeReservedCharacters+') OR resourceTitleObject.\\*:('+value_escapeReservedCharacters+')^2 OR resourceTitleObject.\\*:\"'+value_escapeReservedCharacters+'\"^6)'
                     let query:{[index: string]:any} = {
                       query:
                         {
