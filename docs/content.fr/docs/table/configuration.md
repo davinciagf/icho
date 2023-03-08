@@ -98,6 +98,8 @@ opérées par l'utilisateur.
 
 
 ### Zone "Search"
+Afin d'être présente, le champs ***fulltextfilter*** doit contenir une valeur.
+
 -	***fulltextfilter*** : nom du champ de l'index qui sont utilisés pour la recherche de type 'fulltext' . Afin d'utiliser la même query que dans la recherche Metawal, il suffit de définir ce champs avec la valeur : `mw_default_query`
 -	***search_placeholder*** : texte affiché au niveau de la zone de recherche
 
