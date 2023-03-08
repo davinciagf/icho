@@ -28,6 +28,8 @@ Les paragraphes suivants décrivent ces différents paramètres :
 |------------|-------------------------------------|--|
 | catalogueurl | Paramètre global                    | x |
 | filter | Paramètre global |  |
+| fulltextfilter | Zone de recherche |  |
+| search_placeholder | Zone de recherche |  |
 | sortby | Paramètre global |  |
 | sorttype | Paramètre global |  |
 | filterfield | Paramètre de la zone de recherche |  |
@@ -94,20 +96,33 @@ La barre de recherche peut contenir trois zones permettant d'affiner la recherch
 opérées par l'utilisateur.
 ![table_searchArea_schema.png](../images/table_searchArea_schema.png)
 
-## Zone "Search"
 
--	***fulltextfilter*** : nom du champ de l'index qui est utilisé pour une recherche de type 'fulltext'
-   
-  Exemple :
-
-  ```
-  ```
+### Zone "Search"
+-	***fulltextfilter*** : nom du champ de l'index qui sont utilisés pour la recherche de type 'fulltext' . Afin d'utiliser la même query que dans la recherche Metawal, il suffit de définir ce champs avec la valeur : `mw_default_query`
 -	***search_placeholder*** : texte affiché au niveau de la zone de recherche
 
 Exemple :
 
+  ```
+  <catalogue-results-card
+    ...
+    fulltextfilter="resourceTitleObject.langfre, resourceHookAbstractObject.langfre"
+    search_placeholder="Recherche libre"
+    ...>
+  </catalogue-results-card>
+  ```
+
+Exemple en utilisant une requête identique à Metawal:
+
 ```
-```
+  <catalogue-results-card
+    ...
+    fulltextfilter="mw_default_query"
+    search_placeholder="Recherche libre"
+    ...>
+  </catalogue-results-card>
+  ```
+
 ## Zone "Field X"
 -	***togglefilterfield*** : nom du champ de l'index qui sert de filtre
 -	***toggleismultiselect*** : permet d'activer ou non une sélection multiple (valeur autorisée : 'true' ou 'false')
