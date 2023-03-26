@@ -197,7 +197,11 @@ Plusieurs paramètres sont utilisés :
   -	*linkHook*: texte affiché pour le bouton de lien
   -	*additionalinfoIndex*: nom du champ de l’index pour la zone “Info”
   -	*additionalinfoJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath) est nécessaire
+  - *contactInfoIndex* (string): nom du champ de l’index pour la zone “Contact”
+  - *contactInfoJsonPath* (string): chemin vers la valeur du champ de l’index (un path de type [jsonpath](https://github.com/dchester/jsonpath)
+  - *contactInfoHook* (string) texte affiché à la place de l'email
 - ***linkmdt*** (true/false): affichage ou non du lien Link vers la fiche complète
+- ***linkmdtHook*** : texte lien à afficher
 - ***imageheight*** : hauteur des imagettes (évite l’effet escalier si elles n’ont pas la même taille)
 
 Exemple :
